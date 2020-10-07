@@ -12,9 +12,8 @@ class Blog extends BaseController
 		$posts = ['title 1', 'title 2', 'title 3'];
 		$data['posts'] = $posts;
 
-		echo view('templates/header', $data);
-		echo view('blog');
-		echo view('templates/footer');
+		return view('blog', $data);
+
 	}
 
 	public function post() {
@@ -23,9 +22,8 @@ class Blog extends BaseController
 			'title' => 'This is an Awesome Blog'
 		];
 
-		echo view('templates/header', $data);
-		echo view('single_post');
-		echo view('templates/footer');
+		return view('single_post', $data);
+
 	}
 
 }
