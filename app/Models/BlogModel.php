@@ -21,4 +21,30 @@ class BlogModel extends Model {
     // protected $validationMessages = [];
     // protected $skipValidation = false;
 
+    protected $beforeInsert = ['checkName'];
+    // protected $beforeInsert = ['hashPassword'];
+    // afterInsert
+    // beforeUpdate
+    // afterUpdate
+    // afterFind
+    // afterDelete
+
+    public function checkName(array $data) {
+
+        $newTitle = $data['data']['post_title'] . ' Extra Features';
+        $data['data']['post_title'] = $NewTitle;
+
+        return $data;
+
+    }
+
+    // encrypt the password
+    // public function hashPassword(array $data) {
+
+    //     $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+
+    //     return $data;
+
+    // }
+
 }
